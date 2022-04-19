@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.farmacia.controllers.ControladorTabDispensaciones">
+   <children>
+      <SplitPane dividerPositions="0.2762063227953411, 0.5723793677204659" layoutX="10.0" layoutY="10.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <TableView fx:id="tablaDispensaciones" onMouseClicked="#establecerLabelsDispensacion" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="nombrePacienteDispensacion" prefWidth="264.0" style="-fx-alignment: CENTER;" text="Nombre del Paciente" />
+                        <TableColumn fx:id="cedulaPacienteDispensacion" minWidth="0.0" prefWidth="156.0" sortable="false" style="-fx-alignment: CENTER;" text="Cedula del Paciente" />
+                        <TableColumn fx:id="nombreDispensarioDispensacion" prefWidth="310.0" sortable="false" style="-fx-alignment: CENTER;" text="Nombre del Dispensario" />
+                        <TableColumn fx:id="cedulaDispensarioDispensacion" prefWidth="202.0" sortable="false" style="-fx-alignment: CENTER;" text="Cedula del Dispensario" />
+                        <TableColumn fx:id="nombreMedicamentoDispensacion" prefWidth="214.0" sortable="false" style="-fx-alignment: CENTER;" text="Nombre del Medicamento" />
+                        <TableColumn fx:id="codigoMedicamentoDispensacion" prefWidth="284.0" sortable="false" style="-fx-alignment: CENTER;" text="Codigo del Medicamento" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="356.0" prefWidth="1221.0">
+               <children>
+                  <GridPane layoutX="7.0" layoutY="116.0" prefHeight="300.0" prefWidth="1339.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="273.0" minHeight="10.0" prefHeight="136.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Detalle de la Seleccion">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <GridPane hgap="40.0" GridPane.rowIndex="1">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="472.0" minWidth="10.0" prefWidth="198.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="624.0" minWidth="10.0" prefWidth="342.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="256.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="554.0" minWidth="10.0" prefWidth="413.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="28.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Correo del Paciente:" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo de la Orden:" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vigencia de la Orden:" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Correo del Dispensario:" GridPane.columnIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis del Medicamento:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cargo del Dispensario:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Via de Administracion del Medicamento:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Concentracion del Medicamento:" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="342.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="369.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="396.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="415.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="459.0" GridPane.columnIndex="3" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="410.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="438.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Label fx:id="tViaAdministracionMedicamento" alignment="TOP_LEFT" prefHeight="16.0" prefWidth="541.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <Label fx:id="tCorreoPaciente" prefHeight="16.0" prefWidth="400.0" GridPane.columnIndex="1" />
+                              <Label fx:id="tCodigoOrdenPaciente" prefHeight="16.0" prefWidth="419.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="tVigenciaOrdenPaciente" prefHeight="16.0" prefWidth="399.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="tConcentracionMedicamento" prefHeight="16.0" prefWidth="382.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="tCorreoDispensario" prefHeight="16.0" prefWidth="470.0" GridPane.columnIndex="3" />
+                              <Label fx:id="tCargoDispensario" prefHeight="16.0" prefWidth="499.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Label fx:id="tDosisMedicamento" prefHeight="16.0" prefWidth="419.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Presentacion del Medicamento" GridPane.rowIndex="4" />
+                              <Label fx:id="tPresentacionMedicamento" prefHeight="16.0" prefWidth="386.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <GridPane layoutX="151.0" layoutY="46.0" prefHeight="234.0" prefWidth="1431.0" vgap="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="169.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="109.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dispensar Medicamento">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <GridPane hgap="10.0" vgap="10.0" GridPane.rowIndex="1">
+                          <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="180.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="180.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="184.0" minHeight="10.0" prefHeight="184.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Medicamentos Disponibles" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pacientes Registrados" GridPane.columnIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dispensario" GridPane.columnIndex="2" />
+                              <TableView fx:id="tablaMedicamentos" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                <columns>
+                                  <TableColumn fx:id="nombreMedicamento" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Nombre" />
+                                  <TableColumn fx:id="codigoMedicamento" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Codigo" />
+                                    <TableColumn fx:id="presentacionMedicamento" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Presentacion" />
+                                    <TableColumn fx:id="concentracionMedicamento" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Concentracion" />
+                                    <TableColumn fx:id="viaAdministracionMedicamento" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Via de Administracion" />
+                                    <TableColumn fx:id="dosisMedicamento" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Dosis" />
+                                </columns>
+                              </TableView>
+                              <TableView fx:id="tablaPacientes" layoutX="10.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <columns>
+                                    <TableColumn fx:id="nombrePaciente" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Nombre" />
+                                    <TableColumn fx:id="cedulaPaciente" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Cedula" />
+                                    <TableColumn fx:id="correoPaciente" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Correo" />
+                                    <TableColumn fx:id="codigoOrdenPaciente" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Codigo de la Orden" />
+                                    <TableColumn fx:id="vigenciaOrdenPaciente" editable="false" prefWidth="200.0" sortable="false" style="-fx-alignment: CENTER;" text="Vigencia de la Orden" />
+                                 </columns>
+                              </TableView>
+                              <GridPane GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cedula:" GridPane.rowIndex="1" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Correo:" GridPane.rowIndex="2" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cargo:" GridPane.rowIndex="3" />
+                                    <Label fx:id="tNombreDispensarioActual" prefHeight="16.0" prefWidth="238.0" GridPane.columnIndex="1" />
+                                    <Label fx:id="tCedulaDispensarioActual" prefHeight="16.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="tCorreoDispensarioActual" prefHeight="16.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label prefHeight="16.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label fx:id="tCargoDispensarioActual" prefHeight="16.0" prefWidth="244.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </GridPane>
+                        <Button mnemonicParsing="false" onAction="#crearDispensacion" text="Crear Nueva Dispensacion" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
